@@ -2,56 +2,73 @@
  int y=250;
  int x=250;
  int bSize = 10;
- int myColor = 100;   
- Bacteria bob;
+ int myColor = 0;   
+ Bacteria[] bob;
  void setup()   
  {     
 	//initialize bacteria variables here
 	size(500,500);
-	background(150,50,50);   
-	 
+	background(150,50,50); 
+	bob = new Bacteria[20];  
+	for(int i = 0; i<bob.length; i++)
+	{
+		bob[i]= new Bacteria();
+	}
  }   
  void draw()   
  {    
  	background(150,50,50);
- 	Bacteria bob = new Bacteria();
- 	bob.show();
- 	bob.move();
- 	myColor++;
+ 	for(int i = 0; i<bob.length; i++)
+ 	{
+ 		bob[i].show();
+ 		bob[i].move();
+ 	}
+
+ 	myColor = (int)(Math.random()*250);
+ 	/*(myColor++;
  	if(myColor>200)
  	{
  		myColor = 100;
  	}
  	bSize++;
- 	if(bSize>20)
+ 	if(bSize>6)
  	{
  		bSize = 5;
  	}
+ 	*/
  	//move and show the bacteria   
  }  
  class Bacteria    
- {     
+ {    
+ 	int bSize, myX, myY, mNum; 
  	Bacteria()
  	{
- 	int myX = 250;
- 	int myY = 250;
- 	int bColor = myColor;
- 	int bSize = 10;
+ 	myX = 250;
+ 	myY = 250;
+ 	mNum =0;
+ 	bSize = 10;
     }
  	void show()
  	{
  		strokeWeight(5);
- 		stroke(myColor);
+ 		stroke(0,myColor,0);
  		fill(255);
- 		ellipse(x, y, bSize, bSize);
+ 		ellipse(myX, myY, bSize, bSize);
 
  	}
  	void move()
  	{
-
- 		x = x + (int)(Math.random()*4-2);
- 		y = y + (int)(Math.random()*4-2);
-
+ 		if(mNum == 0)
+ 		{
+ 		myX = myX + (int)(Math.random()*4-2);
+ 		myY = myY + (int)(Math.random()*4-2);
+ 		}
+ 		/*
+ 		if(mNum  == 1)
+ 		{
+ 			myX = myX + (int)(Math.random())
+ 		}
+		*/
  	}
 
  }    
