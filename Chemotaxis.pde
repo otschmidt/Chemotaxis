@@ -52,7 +52,7 @@
  	{
  		strokeWeight(5);
  		stroke(0,myColor,0);
- 		fill(255);
+ 		fill(0,255,0);
  		ellipse(myX, myY, bSize, bSize);
 
  	}
