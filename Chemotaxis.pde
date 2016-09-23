@@ -9,7 +9,7 @@
 	//initialize bacteria variables here
 	size(500,500);
 	background(150,50,50); 
-	bob = new Bacteria[20];  
+	bob = new Bacteria[100];  
 	for(int i = 0; i<bob.length; i++)
 	{
 		bob[i]= new Bacteria();
@@ -24,7 +24,7 @@
  		bob[i].move();
  	}
 
- 	myColor = (int)(Math.random()*250);
+ 	myColor = (int)(Math.random()*125);
  	/*(myColor++;
  	if(myColor>200)
  	{
